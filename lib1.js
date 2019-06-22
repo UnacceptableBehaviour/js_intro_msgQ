@@ -2,7 +2,6 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management
 
 
-
 var library_name="HelperLib 1";
 var lib_version='0.0.1';
 lotsOfData = new Array(25).join('*');

@@ -23,4 +23,12 @@ greet("Bob");
 
 greet();
 
-console.log(`App.js Included: ${library_name} v${lib_version}`);
+if (window.lib3UtilsDefined){
+  console.log(`Included: ${libName3Info.libraryName3} v${libName3Info.libName3Version}`);
+}
+if ( !(window.library_name === undefined) ){
+  console.log(`App.js Included: ${library_name} v${lib_version}`);  
+}
+
+
+window.callMeFromTheApp();

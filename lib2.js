@@ -1,5 +1,5 @@
-var library_name="HelperLib 2";
-var lib_version='0.0.1';
+var library_name="HelperLib 2";     // overwrites library_name from lib1.js
+var lib_version='0.0.1';            // overwrites lib_version from lib1.js
 
 console.log(`Included: ${library_name} v${lib_version}`);
 
