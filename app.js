@@ -30,5 +30,5 @@ if ( !(window.library_name === undefined) ){
   console.log(`App.js Included: ${library_name} v${lib_version}`);  
 }
 
-
-window.callMeFromTheApp();
+console.log(`APP.js - window.lib3function typeof: ${typeof(window.lib3function)} <`)
+window.lib3function();

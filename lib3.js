@@ -35,6 +35,7 @@ if (!window.lib3UtilsDefined) {
     
     })();
     
+    // OUTPUT
     // "this is the start"
     // "this is just a message"
     // "this is the end"
@@ -42,11 +43,15 @@ if (!window.lib3UtilsDefined) {
     // "Callback 1: this is a msg from call back"
     // "Callback 2: this is a msg from call back"
     
-    //function callMeFromTheApp(){                        // not in scope cannot call from app.js  
-    window.callMeFromTheApp = function () {               // pointless - polutes namespace - but works
+    function callMeFromTheApp(){                        // not in scope cannot call from app.js  
+    //window.callMeFromTheApp = function () {               // pointless - polutes namespace - but works
       console.log('lib3UtilsDefined:callMeFromTheApp');
       console.log(`lib3UtilsDefined: ${(new Date).getMilliseconds()}`);
     };
+    
+    window.lib3function = callMeFromTheApp;
+    console.log(`lib3.js - window.lib3function typeof: ${typeof(callMeFromTheApp)} <`)
+    console.log(`lib3.js - window.lib3function typeof: ${typeof(window.lib3function)} <`)
     
     console.log('libraryName3: loaded -E');
     
