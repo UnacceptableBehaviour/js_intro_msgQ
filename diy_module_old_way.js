@@ -24,7 +24,7 @@ fruit('apple');
 fruit('nectarine');
 
 
-// var myDIYModule = (function() {})();
+// var myDIYModule = (function() {})(); - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - type 1
 
 var myDIYModule = (function() { // closure scope start
   // private vars
@@ -48,7 +48,7 @@ myDIYModule.print();
 console.log(`diy_module_old_way:myDIYModule.counter?: ${myDIYModule.counter}`); // counter is not accessible
 
 
-// revealing module pattern - similar to above (but more readable IMHO)
+// revealing module pattern - similar to above (but more readable IMHO) - - - - - - - - - - - - - type 2
 
 var myRevealingModule = (function() {
   var counter = 0;
@@ -76,7 +76,7 @@ console.log(`diy_module_old_way:myRevealingModule.counter?: ${myRevealingModule.
 
 
 
-
+// - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - type 3
 var namespace = {};  // object
 
 (function(ns) {
