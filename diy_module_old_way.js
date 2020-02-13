@@ -47,4 +47,36 @@ myDIYModule.increment();
 myDIYModule.print();
 console.log(`diy_module_old_way:myDIYModule.counter?: ${myDIYModule.counter}`); // counter is not accessible
 
+
+// revealing module pattern - similar to above (but more readable IMHO)
+
+var myRevealingModule = (function() {
+  var counter = 0;
+                
+  var increment = function(){
+    counter += 1;
+  };
+  
+  var print = function(){
+    console.log(`diy_module_old_way: REVEAL counter:${counter}`);
+  };
+                  
+  return {
+    increment: increment,
+    print:     print,
+  } 
+
+})();
+
+myRevealingModule
+
+// myDIYModule returns object (hash of functions)
+myRevealingModule.print();     // print refers to a function  () invoke it
+myRevealingModule.increment();
+myRevealingModule.print();
+console.log(`diy_module_old_way:myRevealingModule.counter?: ${myRevealingModule.counter}`); // counter is not accessible
+
+
+
+
 console.log("diy_module_old_way:******************* OVER AND OUT *******************");
