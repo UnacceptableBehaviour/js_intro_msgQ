@@ -30,7 +30,7 @@ for (var p=0; p <= no_of_people; p++ ){
 
 console.log(people);
 
-people.person_2.name = "Milly"  // changes everyones name to Milly! 
+people.person_2.name = "Milly";  // changes everyones name to Milly! 
 
 console.log(people);  
 
