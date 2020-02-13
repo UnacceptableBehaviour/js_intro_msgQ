@@ -68,13 +68,39 @@ var myRevealingModule = (function() {
 
 })();
 
-myRevealingModule
-
 // myDIYModule returns object (hash of functions)
 myRevealingModule.print();     // print refers to a function  () invoke it
 myRevealingModule.increment();
 myRevealingModule.print();
 console.log(`diy_module_old_way:myRevealingModule.counter?: ${myRevealingModule.counter}`); // counter is not accessible
+
+
+
+
+var namespace = {};  // object
+
+(function(ns) {
+  var counter = 0;                    // private var
+  var moduleName = 'What the?';       // private var
+                
+  ns.increment = function(){
+    counter += 1;
+  };
+  
+  ns.print = function(){
+    console.log(`diy_module_old_way: NAMESPACE counter:${counter}`);
+  };
+
+  ns.name = moduleName;
+
+})(namespace);    // pass namespace as parameter, populate it inside th IIFE closure
+                  // than call and access as below
+// calling
+namespace.print();
+namespace.increment();
+namespace.print();
+console.log(`diy_module_old_way: NAMESPACE namespace.moduleName:${namespace.moduleName}`); // undefined
+console.log(`diy_module_old_way: NAMESPACE namespace.name:${namespace.name}`);             // What the?
 
 
 
