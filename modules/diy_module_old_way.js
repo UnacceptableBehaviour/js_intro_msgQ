@@ -2,7 +2,16 @@ console.log("diy_module_old_way:************************ START *****************
 
 // https://www.samanthaming.com/tidbits/79-module-cheatsheet/
 // https://www.youtube.com/watch?v=GQ96b_u7rGc
-// Ex create  a DIY module modules 21m27 ^ 
+// Ex create  a DIY module modules 21m27 ^
+//
+// Then https://www.youtube.com/watch?v=qJWALEoGge4
+// 24m47 for ES modules - 0m-24m covers IIFE & nodes modules CJS, how bundler works
+
+
+// Gotchas here: Chrome NO file cors!
+// https://medium.com/@mattlag/es6-modules-getting-started-gotchas-2ad154f38e2e
+
+
 
 // using an IIFE - https://www.youtube.com/watch?v=3cbiZV4H22c 3m30
 

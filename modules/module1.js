@@ -1,8 +1,4 @@
-
-// https://www.youtube.com/watch?v=GQ96b_u7rGc
-// https://www.samanthaming.com/tidbits/79-module-cheatsheet/
-
-// Ex create  a modules that exports a function to depluralise a word (food specifically)
+// Ex create a module that exports a function to depluralise a word (food specifically)
 
 // python version: (from: scan_for_each_data.py)
 //def singular(ingredient):
@@ -78,10 +74,17 @@
 //     newName2
 //   } from '...'
 
+// - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - ES6 standard
+// https://www.youtube.com/watch?v=GQ96b_u7rGc - great history lesson!
+// from 39m38 ^
+// - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - ES6 standard
 
 
-function singular(ingredient){
-  console.log(`Module1: singular${ingredient}`);
-  
+var singular = function(ingredient){
+  console.log(`module1: singular${ingredient}`); 
 };
 
+
+export {
+  singular
+} 

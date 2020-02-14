@@ -26,7 +26,14 @@
   <!--<script src="lib4.js"></script>-->
 
 
-  <script src="diy_module_old_way.js"></script>
+  <script src="modules/diy_module_old_way.js"></script>
+  
+  <!--<script src="./module1.js" type="module"></script>-->
+  <!--to avoid will not use local file & CORS policy issues serve file with server-->
+  <!--cd /Users/simon/a_syllabus/lang/html_css_js/js_intro_msgQ-->
+  <!--$ http-server -p 9000 --cors modules-->
+  <script src="http://127.0.0.1:9000/module1.js" type="module"></script>  
+  
   <script src="app.js"></script>
 </body>
 

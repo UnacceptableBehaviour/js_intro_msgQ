@@ -12,6 +12,7 @@
 // TODO also Read
 // https://medium.com/backticks-tildes/introduction-to-es6-modules-49956f580da
 
+import { singular } from 'module1.js';
 
 function b2(){  
   console.log("app.js "+myVar);
@@ -56,3 +57,6 @@ console.log("app.js "+'Yo!');
 myDIYModule.print();     // print refers to a function  () invoke it
 myDIYModule.increment();
 myDIYModule.print();
+
+console.log("app.js "+'MODULE1 imports');
+singular('potato');     // imported at top of file
