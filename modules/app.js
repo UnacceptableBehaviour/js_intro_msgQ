@@ -1,18 +1,13 @@
 
-// TODO Add comments to this for refresh w/o exec
-// Read and add updates / demo
-// https://stackoverflow.com/questions/950087/how-do-i-include-a-javascript-file-in-another-javascript-file
-//
-// Various include solutions
-// https://hype.codes/how-include-js-file-another-js-file
-
 // Freecode Camp Modules in ES6 - Ex      < < < < < TODO
 // https://www.freecodecamp.org/news/how-to-use-es6-modules-and-why-theyre-important-a9b20b480773/
 //
 // TODO also Read
 // https://medium.com/backticks-tildes/introduction-to-es6-modules-49956f580da
 
-import { singular } from 'module1.js';
+
+import * as myModule from './module1.js';
+
 
 function b2(){  
   console.log("app.js "+myVar);
@@ -59,4 +54,14 @@ myDIYModule.increment();
 myDIYModule.print();
 
 console.log("app.js "+'MODULE1 imports');
-singular('potato');     // imported at top of file
+myModule.singular('potato');     // imported at top of file
+
+console.log(myModule);
+
+myModule.helloCon("I am the potato, KING of all the Edwards");
+
+myModule.helloConsole("No you're a potato");
+
+
+
+//helloConsole("No you're a potato");

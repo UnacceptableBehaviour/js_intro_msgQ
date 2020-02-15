@@ -77,14 +77,27 @@
 // - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - ES6 standard
 // https://www.youtube.com/watch?v=GQ96b_u7rGc - great history lesson!
 // from 39m38 ^
+// gotchas: https://medium.com/@mattlag/es6-modules-getting-started-gotchas-2ad154f38e2e
+// https://www.youtube.com/watch?v=qJWALEoGge4 from 29m import export notes
 // - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - ES6 standard
 
+export function helloConsole(msg='Im in module1.js'){
+  console.log(`module1.js ${msg}`);
+}
 
-var singular = function(ingredient){
-  console.log(`module1: singular${ingredient}`); 
-};
+export function helloCon(msg='Im in module1.js'){
+  console.log(`module1.js ${msg}`);
+}
 
 
-export {
-  singular
-} 
+export var singular = function(ingredient){
+  console.log(`module1: singular function loaded into var - ${ingredient}`); 
+}
+
+export function nutrientsFromRecipe(rcp = 0){
+  console.log(`module1: nutrients calculated: ${rcp}`); 
+}
+
+
+
+//export default helloConsole;

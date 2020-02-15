@@ -22,19 +22,19 @@
   lib3.js - namespace, window, naive library attempt
   <!--<script src="lib3.js"></script>-->
   <br>
-  lib4.js - EX TODO create library
-  <!--<script src="lib4.js"></script>-->
 
-
+  <!--notice NO type="module" in the script tag-->
+  <!--Uses IIFE pattern (var function scope and a returns object to expose interface)-->
   <script src="modules/diy_module_old_way.js"></script>
   
-  <!--<script src="./module1.js" type="module"></script>-->
-  <!--to avoid will not use local file & CORS policy issues serve file with server-->
-  <!--cd /Users/simon/a_syllabus/lang/html_css_js/js_intro_msgQ-->
-  <!--$ http-server -p 9000 --cors modules-->
-  <script src="http://127.0.0.1:9000/module1.js" type="module"></script>  
+  <!--Modern ES Module-->
+  <script src="modules/module1.js" type="module"></script>  
+
+  <br>
+  <script src="modules/app.js" type="module"></script>
   
-  <script src="app.js"></script>
+  <br>
+  app.js just used it! HOPEFULLY!
 </body>
 
 </html>
