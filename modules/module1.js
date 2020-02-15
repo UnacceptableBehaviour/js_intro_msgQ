@@ -45,6 +45,36 @@
 //
 //    return re.sub(r's$','',ingredient)
 
+export function singular(ingredient){
+  let singular_ingredient = '';
+  
+  ingredient = ingredient.toLowerCase();
+
+  // end in s but are singular, or have no plural
+  const exceptions = new Set(['beef silverside w&s','lemon grass', 'vegetable samosa indian takeaway mrs']);
+  
+  // if it doesn't end in s and has no plural should come out fine!
+  // , 'fish', 'mutton', 'hogget'}
+  
+  if (exceptions.has(ingredient)) {
+      return ingredient;
+  }
+
+  // exceptions with singular version
+  const singular_from_plural = {
+      'radishes'          : 'radish',
+  };
+  
+  console.log(`module1: ${singular_from_plural}`);
+  console.log(`module1: ${singular_from_plural['radishes']}`);
+  console.log(`module1: ${singular_from_plural.radishes}`);
+  
+  if (singular_from_plural.hasOwnProperty(ingredient) ) return(singular_from_plural[ingredient]);
+  
+  return('not found');  
+  
+}
+
 
 //   // from: // https://www.samanthaming.com/tidbits/79-module-cheatsheet/
 //   // Name Export | Name Import - - - - - - - - - - - - - - - - - - - - 
@@ -87,11 +117,6 @@ export function helloConsole(msg='Im in module1.js'){
 
 export function helloCon(msg='Im in module1.js'){
   console.log(`module1.js ${msg}`);
-}
-
-
-export var singular = function(ingredient){
-  console.log(`module1: singular function loaded into var - ${ingredient}`); 
 }
 
 export function nutrientsFromRecipe(rcp = 0){

@@ -5,7 +5,7 @@
 // TODO also Read
 // https://medium.com/backticks-tildes/introduction-to-es6-modules-49956f580da
 
-
+import {singular} from './module1.js';
 import * as myModule from './module1.js';
 
 
@@ -62,6 +62,10 @@ myModule.helloCon("I am the potato, KING of all the Edwards");
 
 myModule.helloConsole("No you're a potato");
 
+console.log("app.js radishes: " + singular('radishes'));
 
+console.log("app.js lemon grass: " + singular('lemon grass'));
+
+console.log("app.js donuts: " + singular('donuts'));
 
 //helloConsole("No you're a potato");
