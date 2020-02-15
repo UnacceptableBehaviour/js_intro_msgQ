@@ -1,49 +1,8 @@
 // Ex create a module that exports a function to depluralise a word (food specifically)
 
-// python version: (from: scan_for_each_data.py)
-//def singular(ingredient):
-//    singular_ingredient = ''
-//
-//    # end in s but are singular, or have no plural
-//    exceptions = {'beef silverside w&s','lemon grass', 'vegetable samosa indian takeaway mrs'}
-//    
-//    # if it doesn't end in s and has no plural should come out fine!
-//    #, 'fish', 'mutton', 'hogget'}
-//    
-//    if ingredient in exceptions:
-//        return ingredient
-//    
-//    # exceptions with singular version
-//    singular_from_plural = {
-//        'radishes'          : 'radish',
-//    }    
-//    
-//    if ingredient in singular_from_plural:
-//        return singular_from_plural[ingredient]
-//
-//    if re.search(r'cloves$',ingredient):           # es
-//        return re.sub(r'cloves$','clove',ingredient)
-//
-//    if re.search(r'cookies$',ingredient):           # ies/es/y - all sorts of cookie flavours
-//        return re.sub(r'cookie$','y',ingredient)
-//
-//    if re.search(r'ies$',ingredient):               # cherries to cherry
-//        return re.sub(r'ies$','y',ingredient)
-//
-//    if re.search(r'olives$',ingredient):           # es
-//        return re.sub(r'olives$','olive',ingredient)
-//
-//    if re.search(r'ves$',ingredient):               # leaves to leaf, halves to half
-//        return re.sub(r'ves$','f',ingredient)
-//
-//    if re.search(r'oes$',ingredient):                # tomatoes to tomato
-//        #print(f"OES - - - - * {ingredient}")
-//        return re.sub(r'oes$','o',ingredient)
-//        
-//    if re.search(r'ii$',ingredient):                # octopii to octopus - never seen octopii in recipe but hey!
-//        return re.sub(r'ii$','us',ingredient)
-//
-//    return re.sub(r's$','',ingredient)
+// python version: (from: scan_for_each_data.py) mysql_python
+// def singular(ingredient):
+
 
 export function singular(ingredient){
   let singular_ingredient = '';
@@ -57,21 +16,41 @@ export function singular(ingredient){
   // , 'fish', 'mutton', 'hogget'}
   
   if (exceptions.has(ingredient)) {
-      return ingredient;
+    return ingredient;
   }
 
   // exceptions with singular version
   const singular_from_plural = {
-      'radishes'          : 'radish',
+    'radishes'          : 'radish',
   };
   
-  console.log(`module1: ${singular_from_plural}`);
-  console.log(`module1: ${singular_from_plural['radishes']}`);
-  console.log(`module1: ${singular_from_plural.radishes}`);
+  if (singular_from_plural.hasOwnProperty(ingredient) ) {
+    return(singular_from_plural[ingredient]);
+  }
   
-  if (singular_from_plural.hasOwnProperty(ingredient) ) return(singular_from_plural[ingredient]);
+  // ending with
+  // cloves > clove - superseed ves > f
+  if ( ingredient.match(/cloves$/) ) return( ingredient.replace(/cloves$/,'clove') );
+
+  // cookies > cookie - superseed ies > y - all sorts of cookie flavours
+  if ( ingredient.match(/cookies$/) ) return( ingredient.replace(/cookies$/,'cookie') );
   
-  return('not found');  
+  // cherries to cherry 
+  if ( ingredient.match(/ies$/) ) return( ingredient.replace(/ies$/,'y') );
+  
+  // various olive - superseed ves > f
+  if ( ingredient.match(/olives$/) ) return( ingredient.replace(/olives$/,'olive') );
+  
+  // leaves > leaf
+  if ( ingredient.match(/ves$/) ) return( ingredient.replace(/ves$/,'f') );
+  
+  // tomatoes > tomato
+  if ( ingredient.match(/oes$/) ) return( ingredient.replace(/oes$/,'o') );
+  
+  // octopii > opctpus
+  if ( ingredient.match(/ii$/) ) return( ingredient.replace(/ii$/,'us') );
+  
+  return(ingredient.replace(/s\b/i,''));  
   
 }
 

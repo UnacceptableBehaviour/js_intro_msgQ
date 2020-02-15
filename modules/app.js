@@ -68,4 +68,6 @@ console.log("app.js lemon grass: " + singular('lemon grass'));
 
 console.log("app.js donuts: " + singular('donuts'));
 
+console.log("app.js donuts: " + singular('garlic cloves'));
+
 //helloConsole("No you're a potato");
