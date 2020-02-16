@@ -16,10 +16,10 @@ console.log("diy_module_old_way:************************ START *****************
 // using an IIFE - https://www.youtube.com/watch?v=3cbiZV4H22c 3m30
 
 var myAnonIIFE = ( function() { console.log("diy_module_old_way: blarney stones"); })();
-//                  ^expression                                                       ^causes immiediate invocation!
+//               ^expression                                                          ^causes immiediate invocation!
 
 var myNamedIIFE = ( banana = function() { console.log("diy_module_old_way: that was a nice banana!!"); })();
-//                  ^expression                                                       ^causes immiediate invocation!
+//                ^expression                                                                            ^causes immiediate invocation!
 
 pear = banana;
 banana();
@@ -27,7 +27,7 @@ console.log("diy_module_old_way: pear call next");
 pear();
 
 var myNamedIIFE = ( fruit = function(edible="banana") { console.log(`diy_module_old_way: that was a nice ${edible}!!`); })();
-//                  ^expression                                                       ^causes immiediate invocation!
+//                ^expression                                                                                              ^causes immiediate invocation!
 
 fruit('apple');
 fruit('nectarine');
