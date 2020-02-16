@@ -4,7 +4,7 @@ simple timing and reference experiments
 
 ES6 Modules
 $ cd js_intro_msgQ                            # cd repo home
-$ http-server -p 9000 --cors .
+$ http-server -p 9000 --cors . -c-1           # -c-1 turn off caching
 
 
 
