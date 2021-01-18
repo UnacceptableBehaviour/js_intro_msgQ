@@ -41,20 +41,23 @@ var a2 = ['dd','ee','ff'];
 var a3 = a1 + a2;             // creates a string
 var a4 = a1.concat(a2);       // creates array - copies data into new space
 
-console.log("lib1.js "+a1);
-console.log("lib1.js "+a2);
-console.log("lib1.js "+a3);
-console.log("lib1.js "+typeof(a3));
-console.log("lib1.js "+a4);
-console.log("lib1.js "+typeof(a4));
+console.log("lib1.js - - s");
+console.log("lib1.js a1 "+a1);
+console.log("lib1.js a2 "+a2);
+console.log("lib1.js a3 "+a3);
+console.log("lib1.js typeof(a3) "+typeof(a3));
+console.log("lib1.js a4 "+a4);
+console.log("lib1.js typeof(a4)"+typeof(a4));
 
 a1[0] = 'aaaa';     // not refelcted in a4
 a4[4] = 'eeee';     // not refelcted in a1
 
-console.log("lib1.js "+a1);
-console.log("lib1.js "+a2);
-console.log("lib1.js "+a4);
-
+console.log("lib1.js assign to a1[0] & a4[4]");
+console.log("lib1.js a1 "+a1);
+console.log("lib1.js a2 "+a2);
+console.log("lib1.js a3 "+a3);
+console.log("lib1.js a4 "+a4);
+console.log("lib1.js - - e");
 // See note on shallow copy
 // https://www.codementor.io/junedlanja/copy-javascript-object-right-way-ohppc777d
 
@@ -87,7 +90,7 @@ people.person_3.name = "John";
 people.person_3.surname = "Hopkins";
 
 
-console.log("lib1.js "+people);              // set BreakPoint (BP) here
+console.log("lib1.js "+people);              // set BreakPoint (BP) here - or type people into the console!
 
 people.person_1.name = "SuckIt";  // reflected in both console.log("lib1.js "+) w/o BP??
 
