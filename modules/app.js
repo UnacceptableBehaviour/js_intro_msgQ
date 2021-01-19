@@ -5,9 +5,35 @@
 // TODO also Read
 // https://medium.com/backticks-tildes/introduction-to-es6-modules-49956f580da
 
+var navButnCnt = 0;
+
 import {singular} from './module1.js';
 import * as myModule from './module1.js';
 
+import * as pageTable from './module_page_table.js';
+
+function addNavbutton(name, callback){
+  console.log("app.js ADDING BUTTON - - - - S");
+  var navbar = document.getElementById('nav_buttons');
+  
+  var nav_button  = document.createElement('BUTTON');
+  
+  nav_button.id = `b_nav_${navButnCnt}`;
+  nav_button.textContent = `B${navButnCnt}`;
+  nav_button.onclick = callback;
+  
+  navbar.appendChild(nav_button);
+  
+  //<button id='b_nav_0'>B0</button>
+  //callback();
+  
+  navButnCnt += 1;
+  console.log("app.js ADDING BUTTON - - - - E");
+}
+
+pageTable.registerPageTarget('pwa_page');
+addNavbutton('BR842', pageTable.registerButton); 
+//addNavbutton('BR842', pageTable.registerButton); 
 
 function b2(){  
   console.log("app.js "+myVar);
@@ -25,7 +51,7 @@ a();
 
 
 function greet(name='<put your name here>'){
-  console.log("app.js "+`Hello ${name}`)
+  console.log("app.js "+`Hello ${name}`);
 }
 
 
@@ -71,3 +97,9 @@ console.log("app.js donuts: " + singular('donuts'));
 console.log("app.js donuts: " + singular('garlic cloves'));
 
 //helloConsole("No you're a potato");
+
+
+
+
+
+
