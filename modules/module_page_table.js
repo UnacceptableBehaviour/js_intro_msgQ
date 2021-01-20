@@ -1,34 +1,39 @@
 // Ex create a module that implements a page behaviour by clicking a button in the navbar
 
+// Eventually be code from:  <script src='static/nutrient_traffic_lights.js'></script>
+  //<script>      
+  //  var recipes = {{ recipes|tojson }};       // convert info using tojson filter      
+  //  console.log(`recipe_t JS ${recipes[0]['ri_name']} - inline CONCLUDED`);  // sanity check      
+  //</script>
 var pageTarget;
-
-function load_table(container_id, rid){
-  console.log(`module_page_table.js: LOADING ${rid} into ${container_id}`);
-}
-
-export function registerPageTarget(pageId){
-  console.log(`module_page_table.js: ${pageId} - registering`);  
-  pageTarget = pageId; 
-}
+var pageId = 'nutritable_page';
+var htmlSource = '/static/html/nutrient_traffic_lights.html';
 
 function load_page() {
-  document.getElementById(pageTarget).innerHTML='<object type="text/html" data="html/nutrient_traffic_lights.html" ></object>';
+  console.log(`module_page_table.js: ${pageId} - loading: ${htmlSource}`);
+  
+  fetch(htmlSource)
+  .then(function(response) {
+    return response.text();
+  })
+  .then(function(body) {
+    document.getElementById(pageTarget).innerHTML = body;
+  });
+  
+}
+export function getButtonInfo(containers){
+  console.log(`module_page_table.js: registering ${pageId} - to ${containers.main}`);
+  
+  pageTarget = containers.main;
+  
+  var buttonInfo = {};
+
+  buttonInfo.callback = load_page;
+  buttonInfo.image    = '../static/images/svg/check1.svg'; // or '' < will use text if no image
+  buttonInfo.alt      = 'nutritable';
+  buttonInfo.text     = 'NT';
+  
+  return buttonInfo;
 }
 
-export function registerButton(msg='Im in module_page_table.js'){
-  console.log(`module_page_table.js: ${msg} - registering`);  
-  load_page();
-}
-
-//export function helloCon(msg='Im in module1.js'){
-//  console.log(`module_page_table.js ${msg}`);
-//}
-//
-//export function nutrientsFromRecipe(rcp = 0){
-//  console.log(`module_page_table: nutrients calculated: ${rcp}`); 
-//}
-//
-
-
-
-//export default helloConsole;
+export default getButtonInfo;
