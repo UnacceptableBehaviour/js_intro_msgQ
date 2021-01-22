@@ -18,6 +18,7 @@ import * as myModule from './module1.js';
 
 // navbar experiment - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 import * as navBarMod from './navbarMod.js';
+import * as pageBlank from './module_page_blank.js';
 import * as pageTable from './module_page_table.js';
 import * as pageWeighIn from './module_page_weigh_in.js';
 import * as pageExamples from './module_page_example_html_retrieve.js';
@@ -28,6 +29,7 @@ import * as pageExamples from './module_page_example_html_retrieve.js';
 var containers = navBarMod.getContainers();
 //var buttonInfo = pageTable.getButtonInfo(containers);
 //navBarMod.addNavbutton(buttonInfo);
+navBarMod.addNavbutton(pageBlank.getButtonInfo(containers));
 navBarMod.addNavbutton(pageExamples.getButtonInfo(containers));
 navBarMod.addNavbutton(pageTable.getButtonInfo(containers));
 navBarMod.addNavbutton(pageWeighIn.getButtonInfo(containers));
