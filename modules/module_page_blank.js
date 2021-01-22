@@ -30,7 +30,7 @@ export function getButtonInfo(containers){
 
   buttonInfo.callback = load_page;
   buttonInfo.image    = '../static/images/svg/blank.svg'; // or '' < will use text if no image
-  buttonInfo.alt      = 'nutritable';
+  buttonInfo.alt      = 'blankPage';
   buttonInfo.text     = 'NT';
   
   return buttonInfo;
